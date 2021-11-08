@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
     const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty());
     const [isReadOnly, setIsReadOnly] = React.useState(false);
+    const [dir, setDir] = React.useState('ltr');
     const [lang, setLang] = React.useState('en');
     const [toolbarPosition, setToolbarPosition] = React.useState('top');
     const [html, setHtml] = React.useState('');
@@ -30,8 +31,13 @@ function App() {
         setHtml(toHTML(newState.getCurrentContent()));
     };
 
+    const onLangChange =(newLanguage) => {
+        setLang(newLanguage);
+        setDir(newLanguage === 'ur' ? 'rtl' : 'ltr');
+    }
+
     return (
-        <Container>
+        <Container style={{ direction : dir }}>
             <div className={classes.optionsWrapper}>
                 <Grid container alignItems="center" justify="flex-end" spacing={4}>
                     <Grid item>
@@ -66,10 +72,11 @@ function App() {
                             labelId="lang-select-label"
                             id="lang-select"
                             value={lang}
-                            onChange={(ev) => setLang(ev.target.value)}>
+                            onChange={(ev) => onLangChange(ev.target.value)}>
                             <MenuItem value="en">English</MenuItem>
                             <MenuItem value="es">Spanish</MenuItem>
                             <MenuItem value="ca">Catalan</MenuItem>
+                            <MenuItem value="ur">اردو</MenuItem>
                         </Select>
                     </Grid>
                 </Grid>
