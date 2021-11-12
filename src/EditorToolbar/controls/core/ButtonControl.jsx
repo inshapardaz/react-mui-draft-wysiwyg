@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
-import Badge from '@material-ui/core/Badge';
-import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import Badge from '@mui/material/Badge';
+import { makeStyles } from '@mui/styles';
+
 
 const useStyles = makeStyles({
     badge: (props) => ({

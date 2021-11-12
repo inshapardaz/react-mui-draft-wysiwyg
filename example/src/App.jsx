@@ -1,21 +1,13 @@
 import React from 'react';
 import MUIEditor, { MUIEditorState } from 'react-mui-draft-wysiwyg';
 import toHTML from 'react-mui-draft-wysiwyg/src/conversion/toHTML';
-import Container from '@material-ui/core/Container';
-import InputLabel from '@material-ui/core/InputLabel';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
-
-const useStyles = makeStyles((theme) => ({
-    optionsWrapper: {
-        paddingTop: theme.spacing(5),
-        paddingBottom: theme.spacing(3),
-    },
-}));
+import Container from '@mui/material/Container';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import Grid from '@mui/material/Grid';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
 
 function App() {
     const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty());
@@ -24,7 +16,6 @@ function App() {
     const [lang, setLang] = React.useState('en');
     const [toolbarPosition, setToolbarPosition] = React.useState('top');
     const [html, setHtml] = React.useState('');
-    const classes = useStyles();
 
     const onChange = (newState) => {
         setEditorState(newState);
@@ -38,7 +29,10 @@ function App() {
 
     return (
         <Container style={{ direction : dir }}>
-            <div className={classes.optionsWrapper}>
+            <div sx={{
+        paddingTop: theme => theme.spacing(5),
+        paddingBottom: theme => theme.spacing(3),
+    }}>
                 <Grid container alignItems="center" justify="flex-end" spacing={4}>
                     <Grid item>
                         <FormControlLabel

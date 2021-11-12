@@ -1,38 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useEditor from '../../../../hooks/useEditor';
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogActions from '@material-ui/core/DialogActions';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 import SizeInputs from './inputs/SizeInputs';
 import ImageToUpload from './image/ImageToUpload';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-    dropArea: ({ highlightDropArea }) => ({
-        width: 500,
-        height: 300,
-        boxSizing: 'border-box',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: theme.spacing(2),
-        marginTop: theme.spacing(1),
-        marginBottom: theme.spacing(2),
-        borderRadius: theme.shape.borderRadius || 4,
-        backgroundColor: highlightDropArea
-            ? theme.palette.grey[400] || '#bdbdbd'
-            : theme.palette.grey[200] || '#eeeeee',
-        border: highlightDropArea
-            ? `solid 3px ${theme.palette.grey[600] || '#757575'}`
-            : `dashed 3px ${theme.palette.grey[400] || '#bdbdbd'}`,
-        color: theme.palette.text.hint || 'rgba(0, 0, 0, 0.38)',
-        cursor: 'pointer',
-    }),
-}));
 
 function UploadDialog({ open, onClose, onSubmit, uploadCallback }) {
     const editor = useEditor();
@@ -47,7 +23,6 @@ function UploadDialog({ open, onClose, onSubmit, uploadCallback }) {
     const [errorMessage, setErrorMessage] = React.useState(null);
     const [highlightDropArea, setHighlightDropArea] = React.useState(false);
     const inputFileRef = React.createRef();
-    const classes = useStyles({ highlightDropArea });
 
     const handleSubmit = (ev) => {
         ev.preventDefault();
@@ -171,7 +146,26 @@ function UploadDialog({ open, onClose, onSubmit, uploadCallback }) {
                     )}
 
                     <div
-                        className={classes.dropArea}
+                        style={{
+                            width: 500,
+                            height: 300,
+                            boxSizing: 'border-box',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: (theme) => theme.spacing(2),
+                            marginTop: (theme) => theme.spacing(1),
+                            marginBottom: (theme) => theme.spacing(2),
+                            borderRadius: (theme) => theme.shape.borderRadius || 4,
+                            backgroundColor: highlightDropArea
+                                ? (theme) => theme.palette.grey[400] || '#bdbdbd'
+                                : (theme) => theme.palette.grey[200] || '#eeeeee',
+                            border: highlightDropArea
+                                ? `solid 3px ${(theme) => theme.palette.grey[600] || '#757575'}`
+                                : `dashed 3px ${(theme) => theme.palette.grey[400] || '#bdbdbd'}`,
+                            color: (theme) => theme.palette.text.hint || 'rgba(0, 0, 0, 0.38)',
+                            cursor: 'pointer',
+                        }}
                         onClick={handleClickDropArea}
                         onDragEnter={handleDragEnter}
                         onDragLeave={handleDragLeave}

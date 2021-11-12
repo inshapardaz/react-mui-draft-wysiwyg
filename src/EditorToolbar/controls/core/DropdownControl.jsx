@@ -1,26 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import { makeStyles } from '@material-ui/core/styles';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import useEditor from '../../../hooks/useEditor';
 import { translateLiteralWithPrefix } from '../../../utils/translateUtils';
 
-const useStyles = makeStyles((theme) => ({
-    selectControl: {
-        margin: theme.spacing(1),
-    },
-}));
-
 function DropdownControl({ value, onChange, options, minWidth = 120, ...rest }) {
-    const classes = useStyles();
     const editor = useEditor();
 
     return (
         <Select
             value={value}
             onChange={(ev) => onChange(ev.target.value)}
-            className={classes.selectControl}
+            sx={ {
+                margin: (theme) => theme.spacing(1),
+            }}
             style={{ minWidth }}
             {...rest}>
             {options.map((option) => (

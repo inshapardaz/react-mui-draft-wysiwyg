@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Editor, EditorState, RichUtils } from 'draft-js';
 import EditorFactories from './utils/EditorFactories';
 import EditorToolbar from './EditorToolbar';
-import Paper from '@material-ui/core/Paper';
+import Paper from '@mui/material/Paper';
 import { defaultConfig } from './types/config';
 import Translator from './lang/Translator';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import toHTML from './conversion/toHTML';
 import useEditor from './hooks/useEditor';
 import useEditorFocus from './hooks/useEditorFocus';
@@ -56,11 +56,6 @@ const useStyles = makeStyles((theme) => ({
                 textAlign: 'justify !important',
             },
         },
-    },
-    editorWrapper: {
-        marginTop: theme.spacing(2),
-        marginBottom: theme.spacing(2),
-        padding: theme.spacing(5),
     },
 }));
 
@@ -128,7 +123,12 @@ function MUIEditor({
 
     const editorWrapperProps = {
         style: editorFactories.getConfigItem('editor', 'style'),
-        className: `${classes.editorWrapper} ${editorFactories.getConfigItem(
+        sx: {
+            marginTop: (theme) => theme.spacing(2),
+            marginBottom: (theme) => theme.spacing(2),
+            padding: (theme) =>theme.spacing(5),
+        },
+        className: `${editorFactories.getConfigItem(
             'editor',
             'className'
         )}`,
