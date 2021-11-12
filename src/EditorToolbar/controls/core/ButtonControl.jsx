@@ -26,6 +26,7 @@ function ButtonControl({
         <Tooltip title={text} aria-disabled={disabled}>
             <span>
                 <IconButton
+                    size="small"
                     onClick={onClick}
                     disabled={disabled}
                     color={active ? 'primary' : 'default'}
@@ -36,7 +37,7 @@ function ButtonControl({
                             horizontal: 'left',
                         }}
                         classes={{ badge: classes.badge }}
-                        overlap="circle"
+                        overlap="circular"
                         badgeContent=" "
                         invisible={badgeColor === null}
                         variant="dot">

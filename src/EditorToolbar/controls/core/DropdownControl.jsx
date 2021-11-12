@@ -5,13 +5,14 @@ import MenuItem from '@mui/material/MenuItem';
 import useEditor from '../../../hooks/useEditor';
 import { translateLiteralWithPrefix } from '../../../utils/translateUtils';
 
-function DropdownControl({ value, onChange, options, minWidth = 120, ...rest }) {
+function DropdownControl({ value, onChange, options, minWidth = 150, ...rest }) {
     const editor = useEditor();
 
     return (
         <Select
             value={value}
             onChange={(ev) => onChange(ev.target.value)}
+            autoWidth
             sx={ {
                 margin: (theme) => theme.spacing(1),
             }}

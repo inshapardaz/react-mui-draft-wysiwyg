@@ -30,7 +30,7 @@ export const MUIEditorState = {
     },
 };
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     '@global': {
         '.mui-editor-left-aligned-block': {
             textAlign: 'left !important',
@@ -138,7 +138,7 @@ function MUIEditor({
     const editorWrapperElement = editorFactories.getConfigItem('editor', 'wrapperElement');
 
     if (editorWrapperElement === Paper) {
-        editorWrapperProps.elevation = 3;
+        editorWrapperProps.elevation = 0;
     }
 
     const EditorWrapper = React.createElement(

@@ -13,7 +13,6 @@ import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import PhotoSizeSelectLargeIcon from '@mui/icons-material/PhotoSizeSelectLarge';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { makeStyles } from '@mui/styles';
 import Typography from '@mui/material/Typography';
 
 const EditorMedia = ({ contentState, block }) => {
@@ -41,18 +40,11 @@ EditorMedia.propTypes = {
     block: PropTypes.object.isRequired,
 };
 
-const useStyles = makeStyles((theme) => ({
-    imgInfo: {
-        padding: theme.spacing(0.6),
-    },
-}));
-
 const EditorImage = ({ src, width, height, contentState, block }) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [infoAnchorEl, setInfoAnchorEl] = React.useState(null);
     const editor = useEditor();
     const editorFocus = useEditorFocus();
-    const classes = useStyles();
 
     const showOptions = (ev) => {
         setAnchorEl(ev.currentTarget);
@@ -127,7 +119,9 @@ const EditorImage = ({ src, width, height, contentState, block }) => {
                     vertical: 'bottom',
                     horizontal: 'right',
                 }}>
-                <Typography color="textSecondary" variant="body1" className={classes.imgInfo}>
+                <Typography color="textSecondary" variant="body1" sx={{
+                    padding: theme => theme.spacing(0.6),
+                    }}>
                     {width}&nbsp;x&nbsp;{height}
                 </Typography>
             </Popover>
