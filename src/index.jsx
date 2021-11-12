@@ -138,7 +138,7 @@ function MUIEditor({
     const editorWrapperElement = editorFactories.getConfigItem('editor', 'wrapperElement');
 
     if (editorWrapperElement === Paper) {
-        editorWrapperProps.elevation = 0;
+        editorWrapperProps.variant = "outlined";
     }
 
     const EditorWrapper = React.createElement(
