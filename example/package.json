@@ -1,5 +1,5 @@
 {
-  "name": "react-mui-draft-wysiwyg-example",
+  "name": "urdu-editor-example",
   "homepage": ".",
   "version": "0.0.0",
   "private": true,
@@ -13,7 +13,7 @@
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
-    "react-mui-draft-wysiwyg": "link:.."
+    "urdu-editor": "link:.."
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"

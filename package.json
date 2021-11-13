@@ -1,6 +1,6 @@
 {
-  "homepage": "https://github.com/inshapardaz/react-mui-draft-wysiwyg",
-  "name": "react-mui-draft-wysiwyg-urdu",
+  "homepage": "https://github.com/inshapardaz/urdu-editor",
+  "name": "urdu-editor",
   "version": "1.0.3",
   "description": "React component that allows to use a rich editor based on Material UI and Draft-js with Urdu Language",
   "author": "Kelsier90",
@@ -17,7 +17,7 @@
     "html"
   ],
   "license": "MIT",
-  "repository": "inshapardaz/react-mui-draft-wysiwyg",
+  "repository": "inshapardaz/urdu-editor",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.jsx",
@@ -41,6 +41,7 @@
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.1.0",
+    "@mui/styles": "^5.1.0",
     "draft-js": "^0.11.7",
     "prop-types": "latest",
     "react": "^17.0.2"
@@ -51,6 +52,7 @@
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.1.0",
+    "@mui/styles": "^5.1.0",
     "cross-env": "^7.0.3",
     "draft-js": "^0.11.7",
     "eslint": "^8.2.0",
@@ -73,8 +75,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "@mui/styles": "^5.1.0"
-  }
+  ]
 }

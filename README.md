@@ -1,12 +1,12 @@
-# react-mui-draft-wysiwyg
+# urdu-editor
 
 > React component that allows to use a rich editor based on Material UI and Draft-js
 
 
-[![NPM](https://img.shields.io/npm/v/react-mui-draft-wysiwyg.svg)](https://www.npmjs.com/package/react-mui-draft-wysiwyg) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Node.js Package](https://github.com/inshapardaz/urdu-editor/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/inshapardaz/urdu-editor/actions/workflows/npm-publish.yml)
 
 
-![Hi, I'm a rich text editor based on MUI and Draft.js](https://raw.githubusercontent.com/Kelsier90/react-mui-draft-wysiwyg/master/example/public/hi.gif)
+[Extension to work by Kelsier90](https://raw.githubusercontent.com/Kelsier90/urdu-editor/master/example/public/hi.gif)
 
 
 ## Install
@@ -18,18 +18,18 @@ Then install the editor:
 
 With npm:
 ```bash
-npm install --save @material-ui/icons draft-js react-mui-draft-wysiwyg
+npm install --save @material-ui/icons draft-js urdu-editor
 ```
 Or with yarn:
 ```bash
-yarn add @material-ui/icons draft-js react-mui-draft-wysiwyg
+yarn add @material-ui/icons draft-js urdu-editor
 ```
 
 ## Usage
 
 ```jsx
 import React from 'react'
-import MUIEditor, { MUIEditorState } from 'react-mui-draft-wysiwyg'
+import MUIEditor, { MUIEditorState } from 'urdu-editor'
 
 function Example() {
   const [editorState, setEditorState] = React.useState(MUIEditorState.createEmpty());
@@ -41,6 +41,12 @@ function Example() {
   <MUIEditor editorState={editorState} onChange={onChange} />
 }
 ```
+
+# Local Developing
+
+- install packages using  `yarn install` and start it using `yarn start`
+
+- run the example project by using `yarn install` first to install packages and `yarn start` to start the example project in browser
 
 ## Full documentation here:
 

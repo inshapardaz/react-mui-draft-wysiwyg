@@ -1,6 +1,6 @@
 import React from 'react';
-import MUIEditor, { MUIEditorState } from 'react-mui-draft-wysiwyg';
-import toHTML from 'react-mui-draft-wysiwyg/src/conversion/toHTML';
+import MUIEditor, { MUIEditorState } from 'urdu-editor';
+import toHTML from 'urdu-editor/src/conversion/toHTML';
 import Container from '@mui/material/Container';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
