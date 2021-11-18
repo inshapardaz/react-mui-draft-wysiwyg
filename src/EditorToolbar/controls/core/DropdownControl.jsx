@@ -13,6 +13,7 @@ function DropdownControl({ value, onChange, options, minWidth = 150, ...rest }) 
             value={value}
             onChange={(ev) => onChange(ev.target.value)}
             autoWidth
+            variant='standard'
             sx={ {
                 margin: (theme) => theme.spacing(1),
             }}

@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 
 function EditorToolbar({ children, visible = true, ...rest }) {
     return (
-        <Grid container 
+        <Grid container
           alignItems="center"
           sx={{
             border: (theme) => `1px solid ${theme.palette.divider}`,

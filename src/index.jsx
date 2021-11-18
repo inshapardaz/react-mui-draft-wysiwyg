@@ -56,6 +56,7 @@ const useStyles = makeStyles(() => ({
                 textAlign: 'justify !important',
             },
         },
+        '#editor__toolbar svg':  { margin : '0 !important' }
     },
 }));
 
