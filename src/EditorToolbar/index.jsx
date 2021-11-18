@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import Grid from '@mui/material/Grid';
 
 function EditorToolbar({ children, visible = true, ...rest }) {
+    if (!visible) return null;
     return (
         <Grid container
+          id="editor__toolbar"
           alignItems="center"
           sx={{
             border: (theme) => `1px solid ${theme.palette.divider}`,
